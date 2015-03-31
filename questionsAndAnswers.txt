@@ -1,0 +1,5 @@
+Who is the current president of Claflin University?	Dr. Henry N. Tisdale	Dr. Leroy Durant	Dr. Mohan	Dr. Sriram	Dr. Henry N. Tisdale
+Which year was Claflin University founded?	1964	1994	1869	1874	1869
+How many schools does Claflin University have?	9	4	7	8	4
+Which dorm does Emmanuel E. Mong live in?	SRC North	High Rise	SRC South	Kleist	SRC South
+Which building is the oldest building in Claflin University?	Corson Hall	Tingley	SRC North	The Commons	Tingley
