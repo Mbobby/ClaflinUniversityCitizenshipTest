@@ -1,3 +1,10 @@
+<?php
+
+	if ($_SERVER['REQUEST_METHOD'] !== 'POST') 
+	{
+		header('Location: '.'index.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,31 +25,43 @@
 		body
 		{
 			font-size: 30px;
-			background-image: url("background.jpg");
 			color: #F5F5ED;
 			text-align: center;
+			background-color: #BAC4C0;
 		}
 		h1
 		{
 			color: #F5F5ED;
+			font-size: 35px;
 		}
 		.container
 		{
-			background-color: #0E4378;
+			/*background-color: #0E4378;*/
+			background-color: #A4BFC4;
 		}
 		.navbar
 		{
-			padding: 0;
-			margin: 0;
+			background-color: #B3BCB9;
+		}
+		h2
+		{
+			font-size: 30px;
+		}
+
+		hr
+		{
+			line-height: 30px;
+			color: red;
+			background-color: red;
 		}
 	</style>
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-custom">
 		<h1 class="text-center">Claflin University Citizenship Test</h1>
 	</nav>
 	<div class="container">
-		<h1 class="text-center">Test Result</h1>
+		<h2 class="text-center">Result</h1>
 
 		<?php
 
@@ -62,10 +81,21 @@
 				$score += 1;
 			}
 		}
+		$passedPrecentage = ($score/$lineNumber ) * 100;
+		$failedPrecentage = (($lineNumber - $score)/$lineNumber) * 100;
+		echo "<div class=\"progress\">";
+  		echo "<div class=\"progress-bar progress-bar-success\" style=\"width: ".$passedPrecentage."%\">";
+    	echo "<span class=\"sr-only\">".$passedPrecentage."% Complete (success)</span>";
+  		echo "</div>";
+  		echo "<div class=\"progress-bar progress-bar-danger\" style=\"width: ".$failedPrecentage."%\">";
+    	echo "<span class=\"sr-only\">".$failedPrecentage."% Complete (danger)</span>";
+  		echo "</div>";
+		echo "</div>";
 
 		echo "You scored ".$score." point(s) out of ".$lineNumber." possible points.";
 		fclose($fileHandle);
 		?>
+		<hr/>
 		<br>
 		<br>
 	</div>
