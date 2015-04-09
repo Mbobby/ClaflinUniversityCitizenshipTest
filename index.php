@@ -21,16 +21,19 @@
 		{
 			background-color: #BAC4C0;
 			color: #F5F5ED;
+			font-family: "Times New Roman", Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 
 		}
 		h1
 		{
 			color: #F5F5ED;
-			font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+			font-family: "Times New Roman", Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 		}
 		legend
 		{
 			color: #F5F5ED;
+			font-size: 30px;
+			font-family: "Times New Roman", Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 		}
 		.navbar
 		{

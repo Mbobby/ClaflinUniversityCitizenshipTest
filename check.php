@@ -28,16 +28,19 @@
 			color: #F5F5ED;
 			text-align: center;
 			background-color: #BAC4C0;
+			font-family: "Times New Roman", Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 		}
 		h1
 		{
 			color: #F5F5ED;
 			font-size: 35px;
+			font-family: "Times New Roman", Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 		}
 		.container
 		{
 			/*background-color: #0E4378;*/
 			background-color: #A4BFC4;
+			margin-bottom: 20px;
 		}
 		.navbar
 		{
@@ -46,6 +49,7 @@
 		h2
 		{
 			font-size: 30px;
+			font-family: "Times New Roman", Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 		}
 
 		hr
@@ -69,6 +73,7 @@
 		die("File does not exist or you lack permission to open it");
 		$score = 0;
 		$lineNumber = 0;
+		$correction = "";
 		while (!feof($fileHandle)) 
 		{
 			$lineNumber += 1;
@@ -79,6 +84,10 @@
 			if($questionValue == $array[5])
 			{
 				$score += 1;
+			}
+			else
+			{
+				$correction .= "<div class=\"container\"></h3>".$array[0]."</h3><br> Correct: ".$array[5]."</div>";
 			}
 		}
 		$passedPrecentage = ($score/$lineNumber ) * 100;
@@ -96,8 +105,13 @@
 		fclose($fileHandle);
 		?>
 		<hr/>
-		<br>
-		<br>
 	</div>
+		<?php 
+			if(strlen($correction) > 0)
+			{
+				echo "<h2>Correction</h2>";
+				echo $correction;
+			}
+		?>
 </body>
 </html>
